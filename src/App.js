@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Categories from "./components/Categories";
+import Choose from "./components/Choose";
+import Footer from "./components/Footer";
+import Home from "./components/Home";
+import MostSold from "./components/MostSold";
+import Navbar from "./components/Navbar";
+import Products from "./components/Products";
+import Promo from "./components/Promo";
+import Recommend from "./components/Recommend";
+import ScrollToTop from "./components/ScrollToTop";
+import Services from "./components/Services";
+import "./scss/index.scss";
 
-function App() {
+export default function App() {
+  const [theme, SetTheme] = useState("dark");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app" data-theme={theme}>
+      Hello World! Welcome to React JS first project one
+      <Navbar />
+      <Home />
+      <Services />
+      <Categories />
+      <Recommend />
+      <Choose />
+      <Products />
+      <Promo />
+      <MostSold />
+      <Footer />
+      <ScrollToTop />
     </div>
   );
 }
-
-export default App;
